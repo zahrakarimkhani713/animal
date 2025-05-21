@@ -1,44 +1,45 @@
 from abc import ABC, abstractmethod
 
 class Animal(ABC): 
-    
+    wings = True
+    weight = True
+    gills = True
+    leg = True
+    scale = True
     @abstractmethod    
-    def __init__(self  ):
+    def __init__(self):
         pass
 
     @abstractmethod
     def can_fly(self):
-        dic = self.__class__
-        for key,value  in vars(dic).items():
-                if key == "wings" and value =="strong":
-                    return("the animal is flying")
-                
+        if self.wings  == "strong" and self.weight == "light":
+            return("the animal is flying")
+        else:
+             return("this animal can't fly")
     @abstractmethod
     def can_swim(self):
-        dic = self.__class__
-        for key,value  in vars(dic).items():
-                if key == "gills" and value ==True:
-                    return("the animal is swimming")
-
+        if self.gills == True:
+            return("the animal is swimming")
+        else:
+             return("this animal can't swim")
     
     def can_eat(self):
         pass
 
     @abstractmethod
     def can_walk(self):
-        dic = self.__class__
-        for key,value  in vars(dic).items():
-            if key == "leg" and value == True:
-                return("the animal is walking")
+        if self.leg ==True :
+            return("the animal is walking")
+        else:
+             return("this animal can't walk")
             
     @abstractmethod
     def can_crawl(self):
-        dic = self.__class__
-        for key,value  in vars(dic).items():
-            if key == "leg" and value == "short" or value == False:
-                    return("the animal is crawling")
+        if self.scale == True and self.leg =="short" or self.leg == False  and self.scale == True:
+            return("the animal is crawling")
         
-
+        else:
+             return("this animal can't crawl")
 
   
 
@@ -52,7 +53,7 @@ class  Fish (Animal):
     scale = True
     
 
-    def __init__(self  ):
+    def __init__(self):
         super().__init__()
 
 
@@ -78,6 +79,7 @@ fish1 =  Fish()
 # print(fish1.can_swim())
 # print(fish1.can_fly())
 # print(fish1.can_walk())
+# print(fish1.can_crawl())
 
 class Snake(Animal):
     
