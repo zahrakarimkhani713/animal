@@ -25,7 +25,7 @@ class Animal(ABC):
   
     @classmethod
     @abstractmethod
-    def attr(cls ,wings , weight , gills , leg , scale):
+    def set_attr(cls ,wings , weight , gills , leg , scale):
 
         cls.wings = wings
         cls.weight = weight
@@ -92,7 +92,7 @@ class  Fish (Animal):
    
     
     def set_attr(cls ,wings , weight , gills , leg , scale):
-        return super().attr(cls ,wings , weight , gills , leg , scale)
+        return super().set_attr(wings , weight , gills , leg , scale)
 
     def can_fly(self):
         
@@ -116,7 +116,7 @@ fish1 =  Fish()
 # print(fish1.can_swim())
 # print(fish1.can_walk())
 # print(fish1.can_crawl())
-# fish1.attr("" ,"" ,"" , "" ,"")
+fish1.set_attr("" ,"" ,"" , "" ,"")
 print(fish1.can_fly())
 
 
@@ -133,7 +133,7 @@ class Snake(Animal):
          super().__init__()
 
    def set_attr(cls ,wings , weight , gills , leg , scale):
-        return super().attr(cls ,wings , weight , gills , leg , scale)
+        return super().set_attr(wings , weight , gills , leg , scale)
 
 
    def can_fly(self):
@@ -164,7 +164,7 @@ class Dog(Animal):
         super().__init__()
         
     def set_attr(cls ,wings , weight , gills , leg , scale):
-        return super().attr(cls ,wings , weight , gills , leg , scale)
+        return super().set_attr(wings , weight , gills , leg , scale)
 
     def can_fly(self):
          return super().can_fly()
@@ -194,7 +194,7 @@ class Bird(Animal):
             return super().__init__()
 
     def set_attr(cls ,wings , weight , gills , leg , scale):
-        return super().attr(cls ,wings , weight , gills , leg , scale)
+        return super().set_attr(wings , weight , gills , leg , scale)
 
     def can_fly(self):
             return super().can_fly()
